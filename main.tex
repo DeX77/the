@@ -1,0 +1,73 @@
+\documentclass[
+pdftex,
+a4paper,
+12pt,
+oneside,
+idxtotoc,
+halfparskip,
+titlepage,
+bibtotoc,
+liststotoc
+]{scrbook}
+
+\input{packages.tex}
+\author{Daniel Exner}
+\title{Anwendungen Smartphone gestützter Virtueller Realität im akademischem
+Umfeld}
+\date{\today}
+
+\pagestyle{fancy}
+\cfoot{}
+\rfoot{Seite \thepage$\;$von \pageref{LastPage}}
+\headheight=16pt
+%\makeglossary
+%\makeindex
+\usepackage{makeidx}
+\makeindex
+
+% \renewcommand*\appendix{\par\global\@altsecnumformattrue
+%   \setcounter{chapter}{0}%
+%   \setcounter{section}{0}%
+%   \renewcommand*\@chapapp{\appendixname}%
+%   \renewcommand*\thechapter{\appendixname\  \@Alph\c @chapter}}
+
+\begin{document}
+%\oddsidemargin30mm
+\frontmatter
+\input{titlepage.tex}
+\tableofcontents
+\listoffigures
+\listoftables
+\onehalfspace
+
+\input{acknowledgements.tex}
+%\begin{abstract}
+\input{abstract.tex}
+%\end{abstract}
+
+\mainmatter
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}
+
+\input{introduction.tex}
+\input{requirements.tex}
+\input{stateoftheart.tex}
+\input{specification.tex}
+\input{theory.tex}
+\input{implementation.tex}
+\input{results.tex}
+\input{discussion.tex}
+\input{outlook.tex}
+\backmatter
+\newpage
+\bibliographystyle{apalike}
+\bibliography{vr}
+\printindex
+\pagestyle{plain}
+\appendix
+\input{usage.tex}
+\newpage
+\input{erklaerung.tex}
+
+\printindex
+\end{document}
